@@ -15,3 +15,20 @@ resource "aws_db_instance" "mysql" {
   vpc_security_group_ids = [var.db_sg_id]
   skip_final_snapshot  = true
 }
+
+
+
+resource "aws_cloudwatch_metric_alarm" "rds_cpu" {
+  alarm_name          = "rds-high-cpu"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 2
+  metric_name         = "CPUUtilization"
+  namespace          = "AWS/RDS"
+  period             = 300
+  statistic          = "Average"
+  threshold          = 80
+  alarm_actions      = [var.sns_topic_arn]
+  dimensions = {
+    DBInstanceIdentifier = aws_db_instance.mysql.identifier
+  }
+}

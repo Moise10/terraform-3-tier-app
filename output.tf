@@ -3,6 +3,6 @@ output "alb_dns_name" {
 }
 
 output "rds_endpoint" {
-  value       = module.database.rds_endpoint
-  sensitive   = true
+  value     = module.database.rds_endpoint
+  sensitive = true
 }
