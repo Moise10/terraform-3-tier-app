@@ -32,7 +32,8 @@ A production-ready 3-tier AWS infrastructure deployed with Terraform, featuring:
 
 ✅ **Cost Optimized**  
 - Spot instance support (savings up to 70%)
-  
+
+
 
 ## Prerequisites
 
@@ -40,11 +41,15 @@ A production-ready 3-tier AWS infrastructure deployed with Terraform, featuring:
 - AWS account with IAM permissions
 - AWS CLI configured (`aws configure`)
 
-## Usage
 
 ### Deployment
 
 ```bash
 terraform init
-terraform plan 
+terraform plan
 terraform apply
+
+
+** To be Added to the project**
+- Monitoring
+- Github actions

@@ -15,7 +15,7 @@ resource "aws_lb_target_group" "web" {
 
 resource "aws_launch_template" "web" {
   name_prefix   = "web-"
-  image_id      = "ami-0c55b159cbfafe1f0" # Amazon Linux 2
+  image_id      = "ami-058c7119acd5df605" # Amazon Linux 2
   instance_type = "t3.micro"
   vpc_security_group_ids = [var.web_sg_id]
   user_data = base64encode(var.user_data)
