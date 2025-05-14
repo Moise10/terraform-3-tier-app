@@ -49,7 +49,3 @@ terraform init
 terraform plan
 terraform apply
 
-
-** To be Added to the project**
-- Monitoring
-- Github actions
