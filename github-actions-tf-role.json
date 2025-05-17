@@ -1,0 +1,37 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:Describe*",
+				"ec2:RunInstances",
+				"ec2:CreateTags",
+				"autoscaling:*",
+				"rds:CreateDBInstance",
+				"rds:Describe*",
+				"s3:CreateBucket",
+				"s3:PutBucketPolicy",
+				"cloudwatch:PutMetricAlarm",
+				"sns:CreateTopic"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"aws:CalledViaFirst": "terraform.amazonaws.com",
+					"aws:RequestTag/CreatedBy": "GitHubActions"
+				}
+			}
+		},
+		{
+			"Effect": "Allow",
+			"Action": ["iam:PassRole"],
+			"Resource": "arn:aws:iam::*:role/EC2-RDS-Access-Role",
+			"Condition": {
+				"StringEquals": {
+					"iam:PassedToService": ["ec2.amazonaws.com", "rds.amazonaws.com"]
+				}
+			}
+		}
+	]
+}

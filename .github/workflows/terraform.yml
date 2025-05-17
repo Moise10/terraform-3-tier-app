@@ -48,6 +48,8 @@ jobs:
         if: github.event_name == 'pull_request'
         run: terraform plan -input=false
 # I won't apply automatically on push 
+
       # - name: Terraform Apply
         # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       #   run: terraform apply -auto-approve -input=false
+
