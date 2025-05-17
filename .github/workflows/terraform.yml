@@ -1,6 +1,7 @@
 name: Terraform CI/CD
 
 on:
+  workflow_dispatch: 
   push:
     branches: [ "main" ]
   pull_request:
@@ -46,7 +47,7 @@ jobs:
       - name: Terraform Plan
         if: github.event_name == 'pull_request'
         run: terraform plan -input=false
-
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve -input=false
+# I won't apply automatically on push 
+      # - name: Terraform Apply
+        # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #   run: terraform apply -auto-approve -input=false
