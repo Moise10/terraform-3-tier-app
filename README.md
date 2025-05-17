@@ -43,6 +43,8 @@ A production-ready 3-tier AWS infrastructure deployed with Terraform, featuring:
 
 ### Github Actions
 
+![All workflows result](workflows.png) 
+
 Secure infrastructure deployment pipeline for AWS 3-tier architecture using Terraform and GitHub Actions OIDC.
 
 - remenber to set the secrets directly in your github account. the Name should be: AWS_IAM_ROLE , and get the value from your aws account
@@ -56,10 +58,11 @@ Secure infrastructure deployment pipeline for AWS 3-tier architecture using Terr
 ✅ **Automated Validation**  
 - Terraform init/fmt/validate/ on every push  
 - Plan output in PR comments  
-
+![Terraform plan result](terraform_plan.png) 
 # Note
 
 - I ommitted terraform plan because we will need to set the db_credentials
+- Note that I added ON: workflows_dispatch , so it can be triggered directly from github
 
 
 ### Deployment
