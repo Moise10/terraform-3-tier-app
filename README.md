@@ -41,6 +41,21 @@ A production-ready 3-tier AWS infrastructure deployed with Terraform, featuring:
 - AWS account with IAM permissions
 - AWS CLI configured (`aws configure`)
 
+### Github Actions
+
+Secure infrastructure deployment pipeline for AWS 3-tier architecture using Terraform and GitHub Actions OIDC.
+
+- remenber to set the secrets directly in your github account. the Name should be: AWS_IAM_ROLE , and get the value from your aws account
+
+## Features
+
+✅ **Zero-Secret Deployment**  
+- Uses GitHub OIDC for AWS authentication (no stored credentials)  
+- IAM role with least-privilege permissions  
+
+✅ **Automated Validation**  
+- Terraform init/fmt/validate/plan on every push  
+- Plan output in PR comments  
 
 ### Deployment
 
@@ -48,4 +63,7 @@ A production-ready 3-tier AWS infrastructure deployed with Terraform, featuring:
 terraform init
 terraform plan
 terraform apply
+
+
+
 

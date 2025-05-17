@@ -45,7 +45,7 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.event_name == 'push'
         run: terraform plan -input=false
 # I won't apply automatically on push 
 
