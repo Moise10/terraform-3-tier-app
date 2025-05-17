@@ -19,7 +19,7 @@ module "database" {
   db_sg_id           = module.security.db_sg_id
   db_username        = var.db_credentials.username
   db_password        = var.db_credentials.password
-  sns_topic_arn     = module.monitoring.sns_topic_arn 
+  sns_topic_arn      = module.monitoring.sns_topic_arn
 }
 
 module "compute" {
