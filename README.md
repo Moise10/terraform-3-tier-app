@@ -54,8 +54,13 @@ Secure infrastructure deployment pipeline for AWS 3-tier architecture using Terr
 - IAM role with least-privilege permissions  
 
 ✅ **Automated Validation**  
-- Terraform init/fmt/validate/plan on every push  
+- Terraform init/fmt/validate/ on every push  
 - Plan output in PR comments  
+
+# Note
+
+- I ommitted terraform plan because we will need to set the db_credentials
+
 
 ### Deployment
 
