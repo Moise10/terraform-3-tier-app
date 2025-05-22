@@ -6,6 +6,14 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  backend "s3" {
+    bucket         = "terraform-s3-state-237"
+    key            = "terraform.tfstate"
+    region         = "eu-north-1"
+    encrypt        = true
+    use_lockfile   = true
+  }
 }
 
 

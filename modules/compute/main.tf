@@ -15,7 +15,7 @@ resource "aws_lb_target_group" "web" {
 
 resource "aws_launch_template" "web" {
   name_prefix   = "web-"
-  image_id      = "ami-058c7119acd5df605" # Amazon Linux 2
+  image_id      = "ami-058c7119acd5df605" 
   instance_type = "t3.micro"
   vpc_security_group_ids = [var.web_sg_id]
   user_data = base64encode(var.user_data)
@@ -34,7 +34,6 @@ resource "aws_autoscaling_group" "web" {
   }
 }
 
-# Auto Scaling Group Alarms
 resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   alarm_name          = "web-high-cpu"
   comparison_operator = "GreaterThanThreshold"
@@ -50,7 +49,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   }
 }
 
-# Add these resources before the CloudWatch alarms
+
 resource "aws_autoscaling_policy" "scale_out" {
   name                   = "web-scale-out"
   scaling_adjustment     = 1
